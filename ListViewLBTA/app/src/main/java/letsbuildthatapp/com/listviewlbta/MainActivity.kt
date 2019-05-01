@@ -23,27 +23,21 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val listView = findViewById<ListView>(R.id.main_listview)
-        start_button.setOnClickListener {
-        }
 //        val redColor = Color.parseColor("#FF0000")
 //        listView.setBackgroundColor(redColor)
 
         listView.adapter = MyCustomAdapter() // this needs to be my custom adapter telling my list what to render
-       // temp_pause_button.setOnClickListener {
-           // temp_pause_button.visibility=View.GONE
-         //temp_resume_button.visibility=View.VISIBLE
-        //}
-        //temp_resume_button.setOnClickListener {
-          //  temp_pause_button.visibility=View.VISIBLE
-           // temp_resume_button.visibility=View.GONE
+/*        //No idea why below crashes app
+          temp_pause_button.setOnClickListener {
+            temp_pause_button.visibility=View.GONE
+            temp_resume_button.visibility=View.VISIBLE
+        }
+          temp_resume_button.setOnClickListener {
+            temp_pause_button.visibility=View.VISIBLE
+            temp_resume_button.visibility=View.GONE
             //temp_pause_button.text="9"
-        //}
-        //reset_button.setOnClickListener {
-           // chronometer.base= SystemClock.elapsedRealtime()
-            //pause_button.visibility=View.GONE
-            //start_button.visibility=View.VISIBLE
-        //}
-    }
+        }
+*/ }
 
     private class MyCustomAdapter: BaseAdapter() {
 
