@@ -10,10 +10,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.BaseAdapter
-import android.widget.Button
-import android.widget.ListView
-import android.widget.TextView
+import android.widget.*
 import kotlinx.android.synthetic.main.row_main.*
 import kotlinx.android.synthetic.main.row_main.view.*
 
@@ -23,21 +20,24 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val listView = findViewById<ListView>(R.id.main_listview)
+        val temppausebutton = findViewById<Button>(R.id.temp_pause_button)
+
 //        val redColor = Color.parseColor("#FF0000")
 //        listView.setBackgroundColor(redColor)
 
         listView.adapter = MyCustomAdapter() // this needs to be my custom adapter telling my list what to render
-/*        //No idea why below crashes app
-          temp_pause_button.setOnClickListener {
-            temp_pause_button.visibility=View.GONE
-            temp_resume_button.visibility=View.VISIBLE
+//        //No idea why below crashes app
+          temppausebutton.setOnClickListener {
+            //temp_pause_button.visibility=View.GONE
+            //temp_resume_button.visibility=View.VISIBLE
         }
-          temp_resume_button.setOnClickListener {
-            temp_pause_button.visibility=View.VISIBLE
-            temp_resume_button.visibility=View.GONE
+          //temp_resume_button.setOnClickListener {
+          //  temp_pause_button.visibility=View.VISIBLE
+          //  temp_resume_button.visibility=View.GONE
             //temp_pause_button.text="9"
-        }
-*/ }
+        //}
+//
+    }
 
     private class MyCustomAdapter: BaseAdapter() {
 
@@ -106,6 +106,8 @@ class MainActivity : AppCompatActivity() {
             viewHolder.nameTextView.text = names.get(position)
             viewHolder.positionTextView.text = status.get(position)//"Row number: $position"
             viewHolder.timestampTextView.text = timestamp.get(position)
+            //viewHolder.temp_pause_button.text = "resume"
+            //val temp_resume_button = findViewById<Button>(R.id.temp_resume_button)
             return rowMain
         }
         private class ViewHolder(val nameTextView: TextView, val positionTextView: TextView, val timestampTextView: TextView)
